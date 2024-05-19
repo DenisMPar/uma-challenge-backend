@@ -12,6 +12,7 @@ const sequelizeOptions: Options = {
   host: process.env.DB_HOST,
   port: Number(process.env.DB_PORT || 5432),
   logging: false,
+  ssl: true,
   dialectOptions: {
     statement_timeout: 150000,
     lock_timeout: 150000,
