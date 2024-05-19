@@ -1,3 +1,4 @@
+import * as pg from "pg";
 import { Options, Sequelize } from "sequelize";
 import "dotenv/config";
 
@@ -11,7 +12,6 @@ const sequelizeOptions: Options = {
   host: process.env.DB_HOST,
   port: Number(process.env.DB_PORT || 5432),
   logging: false,
-  ssl: false,
   dialectOptions: {
     statement_timeout: 150000,
     lock_timeout: 150000,
@@ -25,6 +25,7 @@ const sequelizeOptions: Options = {
     acquire: 30000,
     idle: 10000,
   },
+  dialectModule: pg,
 };
 
 const sequelizeConection = new Sequelize(sequelizeOptions);
