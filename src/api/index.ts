@@ -21,6 +21,7 @@ router.get(
       );
       res.json({ comments });
     } catch (error: any) {
+      console.log(error);
       res.status(500).json({ error: error.message });
     }
   }
@@ -36,6 +37,7 @@ router.post(
       );
       res.json({ comment });
     } catch (error: any) {
+      console.log(error);
       res.status(500).json({ error: error.message });
     }
   }
