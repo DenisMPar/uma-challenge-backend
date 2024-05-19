@@ -31,6 +31,8 @@ router.post(
   CommentValidate.createComment,
   async (req, res) => {
     try {
+      console.log("create comment");
+
       const comment = await commentsController.createComment(
         req.body.text,
         req.params.imageDate
